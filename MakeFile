@@ -1,0 +1,16 @@
+objects = main.o func.o
+
+all:main
+
+main:$(objects)
+	gcc -o  main $(objects)
+	
+main.o:main.c
+	gcc -c -g main.c
+
+func.o:func.c func.h
+	gcc -c -g func.c
+
+.PHONY:clean
+clean:
+	-rm -rf #(objects)
